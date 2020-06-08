@@ -1,0 +1,20 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            fetch("https://api.mapbox.com/geocoding/v5/mapbox.places/boston.json?access_token=pk.eyJ1IjoibmVoYS10aGFrdXItciIsImEiOiJja2E4YmwzeHcwMnplMnFxajVoc2prMmhnIn0.LeLR9tKRLtbqFkxLhkcIcQ&limit=1").then((response)=>
+            {
+                response.json().then((data)=>{
+                    console.log(data)
+                })
+            })
+
+
+            
+        </script>
+        <h1>Hello this is an about file</h1>
+    </body>
+    </html>

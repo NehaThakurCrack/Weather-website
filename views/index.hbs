@@ -1,0 +1,43 @@
+<! DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+                <script>
+                    window.addEventListener('load', ()=>{
+                        const weather= document.querySelector('form')
+            const search=document.querySelector('input')
+            const para_1= document.querySelector('#para-1')
+                        const para_2= document.querySelector('#para-2')
+                para_1.textContent='Loading...'
+            weather.addEventListener('submit', (e)=>{
+              e.preventDefault();
+                          fetch("http://localhost:3000/weather?address="+search.value).then((response)=>
+            {
+                response.json().then((data)=>{
+                    if(data.error)
+                    para_1.textContent='Error in fetching the location'
+                    else{
+                        para_1.textContent= data.location
+                        para_2.textContent= data.address
+                        console.log(data.response)
+                    }
+                    //console.log(data.location)
+                })
+            })
+            })
+                    },false);
+            
+            
+        
+        </script>
+        <h1>{{title}}</h1>
+        <form>
+            <input placeholder="location">
+            <button>search</button>
+        </form>
+        <p id="para-1"></p>
+        <p id="para-2"></p>
+    </body>
+    </html>
