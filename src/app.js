@@ -6,6 +6,7 @@ const express = require('express')
 const hbs=require('hbs')
 
 const app = express()
+const port=process.env.PORT || 3000
  app.use('/about/',express.static(path.join(__dirname,'../views')))
  hbs.registerPartials(path.join(__dirname,'../partials'))
 app.set('view engine', 'hbs')
@@ -45,6 +46,6 @@ app.get('/weather',(req, res)=>{
  app.get('*', (req, res)=>{
      res.send("page not found 404")
  })
-app.listen(3000, ()=>{
-    console.log('server is up')
+app.listen(port, ()=>{
+    console.log('server is up'+ port)
 })
