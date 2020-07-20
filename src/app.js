@@ -15,6 +15,11 @@ app.get('/about',(req, res) =>{
         title: 'hi'
     })
 })
+app.get('',(req, res) =>{
+    res.render('index', {
+        title: 'hi'
+    })
+})
 app.get('/weather',(req, res)=>{
     if(!req.query.address)
         {
