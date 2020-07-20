@@ -10,8 +10,8 @@ const port=process.env.PORT || 3000
  app.use('/about/',express.static(path.join(__dirname,'../views')))
  hbs.registerPartials(path.join(__dirname,'../partials'))
 app.set('view engine', 'hbs')
-app.get('',(req, res) =>{
-    res.render('index', {
+app.get('/about',(req, res) =>{
+    res.render('about', {
         title: 'hi'
     })
 })
